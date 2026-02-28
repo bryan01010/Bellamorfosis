@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellamorfosis | Centro de Estética</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#f8f4f6;
+    color:#333;
+}
+header{
+    background:linear-gradient(135deg,#d63384,#8e44ad);
+    color:white;
+    padding:20px;
+    position:relative;
+    text-align:center;
+}
+.logo{
+    position:absolute;
+    left:20px;
+    top:15px;
+}
+.title-box{
+    display:inline-block;
+    border:3px solid white;
+    padding:10px 30px;
+    border-radius:12px;
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+.tagline{
+    margin-top:15px;
+    font-size:16px;
+}
+section{
+    padding:60px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+h2{
+    text-align:center;
+    color:#8e44ad;
+    margin-bottom:40px;
+}
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-8px);
+}
+.price{
+    font-size:20px;
+    font-weight:600;
+    color:#d63384;
+    margin-top:10px;
+}
+.location{
+    text-align:center;
+}
+iframe{
+    width:100%;
+    height:350px;
+    border-radius:15px;
+    border:none;
+    margin-top:20px;
+}
+.contact{
+    text-align:center;
+}
+.whatsapp-btn{
+    display:inline-block;
+    padding:15px 25px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    margin-top:20px;
+}
+.social{
+    text-align:center;
+    margin-top:40px;
+}
+.social a{
+    margin:0 15px;
+    font-size:28px;
+    color:white;
+    transition:0.3s;
+}
+.social a:hover{
+    opacity:0.7;
+}
+footer{
+    background:#8e44ad;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:40px;
+}
+@media(max-width:768px){
+    .logo{
+        width:45px;
+        height:45px;
+        font-size:14px;
+        top:10px;
+        left:10px;
+    }
+    .title-box{
+        font-size:20px;
+        padding:8px 15px;
+    }
+    .tagline{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+      <div class="logo">
+      <img src=".\Users\57883300\Pictures\WhatsApp Image 2026-02-11 at 11.08.11 PM.jpg" alt="Logo Bellamorfosis">
+</div>
+
+    <div class="title-box">Bellamorfosis</div>
+    <div class="tagline">Transformamos tu belleza con profesionalismo y excelencia</div>
+</header>
+
+<section class="location">
+    <h2>Ubicación</h2>
+    <p>
+        Galería Cernicchiaro Local 8<br>
+        Esquina General Leandro Gómez y 19 de Abril<br>
+        Paysandú, Uruguay
+    </p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.7687176294494!2d-58.08672822513094!3d-32.31806677385881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95afc90076c7b3b3%3A0x1eef3b3f926cc7e6!2sBellamorfosis!5e0!3m2!1ses-419!2suy!4v1770939418450!5m2!1ses-419!2suy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<section>
+    <h2>Nuestros Servicios</h2>
+    <div class="services">
+        <div class="card">
+            <img src="c:\Users\57883300\Pictures\WhatsApp Image 2026-02-11 at 11.08.11 PM (1).jpeg" alt="Micropigmentación" style="width:100%; border-radius:10px;">
+            <h3>Micropigmentación</h3>
+            <p>Cejas, labios y delineado permanente.</p>
+            <div class="price">$5.500 UYU</div>
+            <a href="#" class="whatsapp-btn">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="ruta/a/imagen2.jpg" alt="Limpieza Facial Profunda" style="width:100%; border-radius:10px;">
+            <h3>Limpieza Facial Profunda</h3>
+            <p>Tratamiento completo para una piel saludable.</p>
+            <div class="price">$2.000 UYU</div>
+            <a href="#" class="whatsapp-btn">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="ruta/a/imagen3.jpg" alt="Baby Glow" style="width:100%; border-radius:10px;">
+            <h3>Baby Glow</h3>
+            <p>Rejuvenecimiento facial con efecto luminoso.</p>
+            <div class="price">$3.200 UYU</div>
+            <a href="#" class="whatsapp-btn">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="ruta/a/imagen4.jpg" alt="Baby Lips" style="width:100%; border-radius:10px;">
+            <h3>Baby Lips</h3>
+            <p>Hidratación profunda y volumen natural.</p>
+            <div class="price">$3.500 UYU</div>
+            <a href="#" class="whatsapp-btn">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="ruta/a/imagen5.jpg" alt="Tratamientos Personalizados" style="width:100%; border-radius:10px;">
+            <h3>Tratamientos Personalizados</h3>
+            <p>Para todos los tipos de piel y biotipos cutáneos.</p>
+            <div class="price">Desde $1.800 UYU</div>
+            <a href="#" class="whatsapp-btn">Leer más</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Agenda tu cita</h2>
+    <p>Contáctanos para reservar tu turno y realzar tu belleza.</p>
+    <a class="whatsapp-btn" href="https://wa.me/59891027253" target="_blank">Reservar por WhatsApp</a>
+</section>
+
+<footer>
+    <div class="social">
+        <a href="https://wa.me/59891027253" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/Bellamorfosis1" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/@alejandra.ferrizo" target="_blank"><i class="fab fa-tiktok"></i></a>        
+        <a href="mailto:ferrizzoalejandra91@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© 2026 Bellamorfosis - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
