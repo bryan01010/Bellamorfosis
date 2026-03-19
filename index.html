@@ -320,6 +320,25 @@
           <span class="brand-mark" aria-hidden="true"><img src="logo.jpeg" alt="Logo Bellamorfosis"></span>
           Bellamorfosis
         </a>
+        <div id="promo" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center;">
+
+  <div style="background:white; padding:20px; border-radius:10px; text-align:center; width:300px;">
+    <h2>🔥 PROMO ESPECIAL</h2>
+    <p>2x1 en micropigmentación</p>
+
+    <a href="https://wa.me/59891027253" target="_blank">
+      <button style="background:green; color:white; padding:10px; border:none; border-radius:5px;">
+        Comprar ahora
+      </button>
+    </a>
+
+    <br><br>
+    <button onclick="cerrarPromo()" style="background:red; color:white; padding:5px; border:none; border-radius:5px;">
+      Cerrar
+    </button>
+  </div>
+
+</div>
         <nav aria-label="Navegación principal">
           <ul>
             <li><a href="#servicios">Servicios</a></li>
@@ -475,8 +494,17 @@
       <span>📍 Paysandú, Uruguay</span>
     </div>
   </footer>
-
   <script>
+function cerrarPromo() {
+  document.getElementById("promo").style.display = "none";
+}
+
+
+setTimeout(function() {
+  document.getElementById("promo").style.display = "flex";
+}, 3000);
+
+
     document.getElementById("current-year").textContent = new Date().getFullYear();
   </script>
 </body>
