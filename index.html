@@ -320,11 +320,11 @@
           <span class="brand-mark" aria-hidden="true"><img src="logo.jpeg" alt="Logo Bellamorfosis"></span>
           Bellamorfosis
         </a>
-        <div id="promo" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center;">
+ <div id="promo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
 
-  <div style="background:black; padding:20px; border-radius:10px; text-align:center; width:300px;">
+  <div style="background:white; padding:20px; border-radius:10px; text-align:center; width:300px;">
     <h2>🔥 PROMO ESPECIAL</h2>
-    <p>2x1 en micropigmentación</p>
+    <p>10% de descuento solo hoy</p>
 
     <a href="https://wa.me/59891027253" target="_blank">
       <button style="background:green; color:white; padding:10px; border:none; border-radius:5px;">
@@ -333,7 +333,9 @@
     </a>
 
     <br><br>
-    <button onclick="cerrarPromo()" style="background:red; color:white; padding:5px; border:none; border-radius:5px;">
+
+    <button onclick="cerrarPromo()" 
+    style="background:red; color:white; padding:5px; border:none; border-radius:5px;">
       Cerrar
     </button>
   </div>
@@ -467,7 +469,10 @@
           <h4>Promo de primera visita</h4>
           <p>Agendando hoy, obtenés diagnóstico facial + plan de cuidado de regalo. O puedes llevar a un acompañante y hacer un 2x1 en micropigmentación.</p>
         </div>
-        <strong>Solo esta semana</strong>
+        <strong><button onclick="abrirPromo()" 
+style="padding:10px 20px; background:black; color:white; border:none; border-radius:5px;">
+Solo esta semana
+</button></strong>
       </article>
 
       <div class="contact-box" id="agenda">
