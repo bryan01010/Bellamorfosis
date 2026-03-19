@@ -148,6 +148,7 @@
       gap: 8px;
       font-weight: 700;
       transition: transform .2s ease;
+      cursor: pointer;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -265,6 +266,69 @@
     .contact-box p { margin: 0 auto 16px; max-width: 48ch; opacity: .95; }
     .btn-whatsapp { background: var(--success); color: #fff; }
 
+    .promo-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .promo-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .promo-content h2 {
+      margin: 0 0 12px;
+      font-size: 1.8rem;
+      color: var(--ink);
+    }
+
+    .promo-content p {
+      margin: 0 0 20px;
+      color: var(--ink-soft);
+      font-size: 1rem;
+    }
+
+    .promo-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .promo-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .2s ease;
+    }
+
+    .promo-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .promo-btn-primary {
+      background: var(--success);
+      color: white;
+    }
+
+    .promo-btn-secondary {
+      background: var(--primary);
+      color: white;
+    }
+
     footer {
       margin-top: 70px;
       background: #241429;
@@ -283,6 +347,11 @@
       color: #fff;
       text-decoration: none;
       border: 1px solid rgba(255,255,255,0.3);
+      transition: background 0.2s ease;
+    }
+
+    .social a:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .social-proof {
@@ -308,6 +377,9 @@
       nav ul { gap: 12px; }
       section { padding: 58px 0; }
       .hero-grid { padding-top: 50px; }
+      .promo-content {
+        max-width: 90vw;
+      }
     }
   </style>
   <meta name="google-site-verification" content="MnJr_YsJmAVX40D1KZdme_zv6t2sDOWnXzOxfpa8T8w" />
@@ -320,27 +392,20 @@
           <span class="brand-mark" aria-hidden="true"><img src="logo.jpeg" alt="Logo Bellamorfosis"></span>
           Bellamorfosis
         </a>
- <div id="promo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
 
-  <div style="background:white; padding:20px; border-radius:10px; text-align:center; width:300px;">
-    <h2>🔥 PROMO ESPECIAL</h2>
-    <p>10% de descuento solo hoy</p>
+        <div id="promo" class="promo-overlay">
+          <div class="promo-content">
+            <h2>🔥 PROMO ESPECIAL</h2>
+            <p>10% de descuento solo hoy</p>
+            <div class="promo-buttons">
+              <a href="https://wa.me/59891027253" target="_blank" rel="noreferrer noopener">
+                <button class="promo-btn promo-btn-primary">Comprar ahora</button>
+              </a>
+              <button class="promo-btn promo-btn-secondary" onclick="cerrarPromo()">Cerrar</button>
+            </div>
+          </div>
+        </div>
 
-    <a href="https://wa.me/59891027253" target="_blank">
-      <button style="background:green; color:white; padding:10px; border:none; border-radius:5px;">
-        Comprar ahora
-      </button>
-    </a>
-
-    <br><br>
-
-    <button onclick="cerrarPromo()" 
-    style="background:red; color:white; padding:5px; border:none; border-radius:5px;">
-      Cerrar
-    </button>
-  </div>
-
-</div>
         <nav aria-label="Navegación principal">
           <ul>
             <li><a href="#servicios">Servicios</a></li>
@@ -434,7 +499,7 @@
     </section>
 
     <section id="experiencia" class="container">
-      <h2 class="section-title">No vendemos “una sesión”, creamos resultados</h2>
+      <h2 class="section-title">No vendemos "una sesión", creamos resultados</h2>
       <p class="section-subtitle">Imágenes reales e inspiración visual para que te imagines en tu mejor versión desde hoy.</p>
 
       <div class="proof-grid">
@@ -442,14 +507,14 @@
           <img src="https://m.clinique.com.mx/media/export/cms/editorial_hub/article/winter_skin_care/mobile/Winter-Skincare_Gentle-Cleanser-Gif-812x600_mobile.gif" alt="Animación de cuidado facial y maquillaje" loading="lazy" />
         </article>
         <article class="video-card">
-          <iframe src="WhatsApp Video 2026-03-15 at 13.55.32.mp4" title="Video sobre rutina estética y cuidado facial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          <iframe title="Video sobre rutina estética y cuidado facial" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
           <p>Tip profesional: la consistencia en tus cuidados + técnica correcta en cabina = piel firme, uniforme y con efecto wow.</p>
         </article>
       </div>
     </section>
 
     <section id="ubicacion" class="container">
-      <h2 class="section-title">Tu próximo “me veo increíble” está en Bellamorfosis</h2>
+      <h2 class="section-title">Tu próximo "me veo increíble" está en Bellamorfosis</h2>
       <p class="section-subtitle">Estamos en el centro de Paysandú para que te sea fácil venir, relajarte y salir renovada.</p>
 
       <div class="location-wrap">
@@ -469,14 +534,11 @@
           <h4>Promo de primera visita</h4>
           <p>Agendando hoy, obtenés diagnóstico facial + plan de cuidado de regalo. O puedes llevar a un acompañante y hacer un 2x1 en micropigmentación.</p>
         </div>
-        <strong><button onclick="abrirPromo()" 
-style="padding:10px 20px; background:black; color:white; border:none; border-radius:5px;">
-Solo esta semana
-</button></strong>
+        <button class="promo-btn promo-btn-primary" onclick="abrirPromo()">Solo esta semana</button>
       </article>
 
       <div class="contact-box" id="agenda">
-        <h3>¿Lista para que te digan “qué linda te ves”?</h3>
+        <h3>¿Lista para que te digan "qué linda te ves"?</h3>
         <p>Reservá por WhatsApp en menos de 1 minuto. Te asesoramos y te recomendamos el tratamiento ideal según tu piel.</p>
         <a class="btn btn-whatsapp" href="https://wa.me/59891027253" target="_blank" rel="noreferrer noopener">
           <i class="fab fa-whatsapp"></i> Quiero mi turno ahora
@@ -499,17 +561,22 @@ Solo esta semana
       <span>📍 Paysandú, Uruguay</span>
     </div>
   </footer>
+
   <script>
-function cerrarPromo() {
-  document.getElementById("promo").style.display = "none";
-}
+    function cerrarPromo() {
+      document.getElementById("promo").style.display = "none";
+    }
 
+    function abrirPromo() {
+      document.getElementById("promo").style.display = "flex";
+    }
 
-setTimeout(function() {
-  document.getElementById("promo").style.display = "flex";
-}, 3000);
+    // Mostrar promo después de 3 segundos
+    setTimeout(function() {
+      document.getElementById("promo").style.display = "flex";
+    }, 3000);
 
-
+    // Establecer año actual
     document.getElementById("current-year").textContent = new Date().getFullYear();
   </script>
 </body>
