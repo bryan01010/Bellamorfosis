@@ -88,7 +88,7 @@
     }
 
     .brand-mark {
-      width: 54px;
+      width: 60px;
       aspect-ratio: 1;
       border-radius: 14px;
       display: grid;
@@ -97,6 +97,21 @@
       background: rgba(255,255,255,0.18);
       border: 1px solid rgba(255,255,255,0.35);
       backdrop-filter: blur(4px);
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+    }
+
+    .brand-mark:hover,
+    .brand-mark:active {
+      transform: scale(1.15);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
     nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 18px; }
@@ -266,6 +281,7 @@
     .contact-box p { margin: 0 auto 16px; max-width: 48ch; opacity: .95; }
     .btn-whatsapp { background: var(--success); color: #fff; }
 
+    /* PROMO MODAL PREMIUM */
     .promo-overlay {
       display: none;
       position: fixed;
@@ -273,67 +289,203 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       justify-content: center;
       align-items: center;
       z-index: 9999;
+      animation: fadeInOverlay 0.3s ease-out;
+      backdrop-filter: blur(4px);
+    }
+
+    @keyframes fadeInOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .promo-content {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
+      background: linear-gradient(135deg, #ffffff 0%, #fff8fc 100%);
+      padding: clamp(24px, 5vw, 48px);
+      border-radius: 28px;
       text-align: center;
-      max-width: 400px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(125, 47, 165, 0.25), 0 0 30px rgba(227, 63, 143, 0.1);
+      border: 2px solid rgba(227, 63, 143, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .promo-content::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(227, 63, 143, 0.1), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .promo-content::after {
+      content: "";
+      position: absolute;
+      bottom: -40%;
+      left: -5%;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(125, 47, 165, 0.08), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* CONFETTI ANIMATION */
+    .confetti-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+      animation: confettiFall 2.5s ease-out forwards;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        opacity: 1;
+        transform: translateY(0) rotateZ(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(300px) rotateZ(360deg);
+      }
     }
 
     .promo-content h2 {
-      margin: 0 0 12px;
-      font-size: 1.8rem;
+      margin: 0 0 8px;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
       color: var(--ink);
+      font-weight: 800;
+      position: relative;
+      z-index: 2;
     }
 
     .promo-content p {
-      margin: 0 0 20px;
+      margin: 0 0 28px;
       color: var(--ink-soft);
-      font-size: 1rem;
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
     }
 
     .promo-buttons {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+      position: relative;
+      z-index: 2;
     }
 
     .promo-btn {
-      padding: 12px 20px;
+      padding: 16px 24px;
       border: none;
-      border-radius: 8px;
-      font-weight: 600;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1rem;
       cursor: pointer;
-      transition: transform .2s ease;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
     }
 
     .promo-btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .promo-btn:active {
+      transform: translateY(-1px);
     }
 
     .promo-btn-primary {
-      background: var(--success);
+      background: linear-gradient(135deg, #25d366, #1da853);
       color: white;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .promo-btn-primary:hover {
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
     }
 
     .promo-btn-secondary {
-      background: var(--primary);
+      background: linear-gradient(135deg, #e33f8f, #d12d7d);
       color: white;
+      box-shadow: 0 8px 20px rgba(227, 63, 143, 0.3);
     }
 
+    .promo-btn-secondary:hover {
+      box-shadow: 0 12px 30px rgba(227, 63, 143, 0.4);
+    }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .whatsapp-btn {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #25d366, #1da853);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 999;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .whatsapp-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* FOOTER MEJORADO */
     footer {
       margin-top: 70px;
       background: #241429;
       color: #eadff0;
-      padding: 30px 16px 38px;
+      padding: 50px 16px 38px;
       text-align: center;
     }
 
@@ -364,6 +516,72 @@
       opacity: .95;
     }
 
+    /* FOOTER MADE BY SECTION */
+    .footer-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      margin: 20px auto;
+    }
+
+    .made-by {
+      margin-top: 24px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .made-by p {
+      margin: 8px 0;
+      opacity: 0.9;
+    }
+
+    .made-by a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .made-by a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .made-by a:hover::after {
+      width: 100%;
+    }
+
+    .made-by a:hover {
+      color: #fff;
+    }
+
+    .portfolio-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: rgba(227, 63, 143, 0.15);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .proof-grid,
@@ -380,6 +598,16 @@
       .promo-content {
         max-width: 90vw;
       }
+      .whatsapp-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+        right: 16px;
+        bottom: 16px;
+      }
+      footer {
+        padding: 40px 16px 30px;
+      }
     }
   </style>
   <meta name="google-site-verification" content="MnJr_YsJmAVX40D1KZdme_zv6t2sDOWnXzOxfpa8T8w" />
@@ -389,17 +617,20 @@
     <div class="container">
       <div class="topbar">
         <a class="brand" href="#inicio" aria-label="Ir al inicio de Bellamorfosis">
-          <span class="brand-mark" aria-hidden="true"><img src="logo.jpeg" alt="Logo Bellamorfosis"></span>
+          <div class="brand-mark" aria-hidden="true" onclick="expandLogo(event)">
+            <img src="logo.jpeg" alt="Logo Bellamorfosis">
+          </div>
           Bellamorfosis
         </a>
 
         <div id="promo" class="promo-overlay">
+          <div class="confetti-container" id="confetti-container"></div>
           <div class="promo-content">
             <h2>🔥 PROMO ESPECIAL</h2>
             <p>2x1 en micropigmentación</p>
             <div class="promo-buttons">
-              <a href="https://wa.me/59891027253" target="_blank" rel="noreferrer noopener">
-                <button class="promo-btn promo-btn-primary">Comprar ahora</button>
+              <a href="https://wa.me/59891027253" target="_blank" rel="noreferrer noopener" class="promo-btn promo-btn-primary">
+                Comprar ahora
               </a>
               <button class="promo-btn promo-btn-secondary" onclick="cerrarPromo()">Cerrar</button>
             </div>
@@ -441,6 +672,11 @@
       </div>
     </div>
   </header>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/59891027253" target="_blank" rel="noreferrer noopener" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <main>
     <section id="servicios" class="container">
@@ -560,24 +796,72 @@
       <span>💖 Especialistas en armonización facial</span>
       <span>📍 Paysandú, Uruguay</span>
     </div>
+
+    <!-- FOOTER MADE BY SECTION -->
+    <div class="footer-divider"></div>
+    <div class="made-by">
+      <p>Hecho con ❤️ por <a href="https://bryan01010.github.io" target="_blank" rel="noreferrer">Bryan01010</a></p>
+      <p>¿Quieres una web como esta para tu negocio?</p>
+      <a href="https://bryan01010.github.io/portfolio" target="_blank" rel="noreferrer" class="portfolio-btn">
+        <i class="fas fa-code"></i> Ver mis trabajos
+      </a>
+    </div>
   </footer>
 
   <script>
+    // Confetti animation
+    function createConfetti() {
+      const container = document.getElementById("confetti-container");
+      const colors = ["#e33f8f", "#7d2fa5", "#ffb3d7", "#25d366", "#ffc0e0"];
+      
+      for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "%";
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = (Math.random() * 0.2) + "s";
+        confetti.style.width = (Math.random() * 8 + 6) + "px";
+        confetti.style.height = confetti.style.width;
+        
+        container.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 2700);
+      }
+    }
+
     function cerrarPromo() {
       document.getElementById("promo").style.display = "none";
     }
 
     function abrirPromo() {
-      document.getElementById("promo").style.display = "flex";
+      const promo = document.getElementById("promo");
+      promo.style.display = "flex";
+      createConfetti();
     }
 
-    // Mostrar promo después de 3 segundos
+    function expandLogo(event) {
+      event.preventDefault();
+      const logo = event.currentTarget;
+      logo.style.transform = "scale(1.25)";
+      setTimeout(() => {
+        logo.style.transform = "scale(1)";
+      }, 300);
+    }
+
+    // Show promo after 3 seconds
     setTimeout(function() {
-      document.getElementById("promo").style.display = "flex";
+      abrirPromo();
     }, 3000);
 
-    // Establecer año actual
+    // Set current year
     document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    // Close promo when clicking outside
+    document.getElementById("promo").addEventListener("click", function(event) {
+      if (event.target === this) {
+        cerrarPromo();
+      }
+    });
   </script>
 </body>
 </html>
