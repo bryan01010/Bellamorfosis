@@ -582,6 +582,361 @@
       border-color: var(--primary);
     }
 
+    /* BREAKPOINT: 320px - Teléfonos muy pequeños */
+    @media (max-width: 320px) {
+      .container {
+        width: 95%;
+      }
+      
+      .hero-grid { padding-top: 30px; }
+      
+      h1 { font-size: clamp(1.4rem, 4vw, 2.5rem); }
+      
+      .brand-mark {
+        width: 50px;
+      }
+      
+      nav ul { gap: 6px; font-size: 0.9rem; }
+      
+      .pill { font-size: 0.75rem; padding: 5px 10px; }
+      
+      .btn { padding: 10px 16px; font-size: 0.9rem; }
+      
+      .promo-content {
+        width: 95%;
+      }
+      
+      .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        right: 12px;
+        bottom: 12px;
+      }
+      
+      section { padding: 40px 0; }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .service-card img { height: 150px; }
+      
+      footer {
+        padding: 30px 12px 20px;
+      }
+      
+      .social a {
+        width: 36px;
+        font-size: 16px;
+      }
+    }
+
+    /* BREAKPOINT: 480px - Teléfonos pequeños en orientación horizontal */
+    @media (min-width: 321px) and (max-width: 480px) {
+      .container {
+        width: 93%;
+      }
+      
+      .hero-grid { 
+        padding-top: 40px;
+        gap: 20px;
+      }
+      
+      h1 { font-size: clamp(1.6rem, 3.5vw, 2.8rem); }
+      
+      .hero-lead { font-size: clamp(0.95rem, 2vw, 1rem); }
+      
+      .brand-mark {
+        width: 52px;
+      }
+      
+      nav ul { gap: 10px; font-size: 0.95rem; }
+      
+      .pill { font-size: 0.8rem; padding: 6px 11px; }
+      
+      .btn { padding: 11px 18px; font-size: 0.95rem; }
+      
+      .promo-content {
+        width: 92%;
+        padding: clamp(20px, 4vw, 40px);
+      }
+      
+      .whatsapp-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+        right: 14px;
+        bottom: 14px;
+      }
+      
+      section { padding: 50px 0; }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .service-card img { height: 160px; }
+      
+      footer {
+        padding: 35px 14px 25px;
+      }
+      
+      .social a {
+        width: 38px;
+      }
+      
+      .section-title { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+    }
+
+    /* BREAKPOINT: 768px - Tabletas en orientación vertical */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+      
+      .hero-grid { 
+        padding: 50px 0 40px;
+        gap: 24px;
+        grid-template-columns: 1fr;
+      }
+      
+      h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); }
+      
+      .hero-lead { font-size: clamp(1rem, 2vw, 1.1rem); }
+      
+      .brand-mark {
+        width: 56px;
+      }
+      
+      nav ul { gap: 14px; }
+      
+      .pill { font-size: 0.85rem; }
+      
+      .btn { padding: 11px 19px; }
+      
+      .hero-card img { aspect-ratio: 16 / 10; }
+      
+      .promo-content {
+        max-width: 500px;
+      }
+      
+      .whatsapp-btn {
+        width: 56px;
+        height: 56px;
+        font-size: 26px;
+        right: 18px;
+        bottom: 18px;
+      }
+      
+      section { padding: 60px 0; }
+      
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .service-card img { height: 170px; }
+      
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .location-wrap {
+        grid-template-columns: 1fr;
+      }
+      
+      footer {
+        padding: 45px 16px 32px;
+      }
+      
+      .section-title { font-size: clamp(1.6rem, 3.5vw, 2rem); }
+    }
+
+    /* BREAKPOINT: 1024px - Tabletas en horizontal / Laptops pequeñas */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        width: min(950px, 90%);
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 24px;
+      }
+      
+      h1 { font-size: clamp(2.2rem, 4.5vw, 3rem); }
+      
+      .hero-lead { font-size: clamp(1.05rem, 2vw, 1.12rem); }
+      
+      .brand-mark {
+        width: 58px;
+      }
+      
+      .btn { padding: 12px 20px; }
+      
+      .promo-content {
+        max-width: 500px;
+      }
+      
+      .whatsapp-btn {
+        width: 58px;
+        height: 58px;
+        font-size: 27px;
+        right: 22px;
+        bottom: 22px;
+      }
+      
+      section { padding: 68px 0; }
+      
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .service-card img { height: 175px; }
+      
+      .proof-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+      
+      .location-wrap {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+      
+      footer {
+        padding: 48px 16px 36px;
+      }
+      
+      .section-title { font-size: clamp(1.8rem, 3.8vw, 2.1rem); }
+    }
+
+    /* BREAKPOINT: 1280px - Laptops y monitores estándar */
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      .container {
+        width: min(1100px, 92%);
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 28px;
+      }
+      
+      h1 { font-size: clamp(2.4rem, 4.7vw, 3.3rem); }
+      
+      .brand-mark {
+        width: 60px;
+      }
+      
+      .btn { padding: 12px 20px; }
+      
+      .promo-content {
+        max-width: 450px;
+      }
+      
+      .whatsapp-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        right: 24px;
+        bottom: 24px;
+      }
+      
+      section { padding: 70px 0; }
+      
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      
+      .service-card img { height: 180px; }
+      
+      .proof-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+      
+      .location-wrap {
+        grid-template-columns: 0.9fr 1.1fr;
+        min-height: 330px;
+      }
+      
+      footer {
+        padding: 50px 16px 38px;
+      }
+      
+      .section-title { font-size: clamp(1.8rem, 3.8vw, 2.2rem); }
+    }
+
+    /* BREAKPOINT: 1536px - Monitores grandes y ultra-anchos */
+    @media (min-width: 1281px) {
+      .container {
+        width: min(1200px, 92%);
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 32px;
+        padding: 68px 0 60px;
+      }
+      
+      h1 { font-size: clamp(2.6rem, 4.7vw, 3.8rem); }
+      
+      .hero-lead { font-size: clamp(1.1rem, 2.2vw, 1.2rem); }
+      
+      .brand-mark {
+        width: 64px;
+      }
+      
+      nav ul { gap: 20px; }
+      
+      .btn { padding: 13px 22px; }
+      
+      .promo-content {
+        max-width: 480px;
+      }
+      
+      .whatsapp-btn {
+        width: 64px;
+        height: 64px;
+        font-size: 30px;
+        right: 28px;
+        bottom: 28px;
+      }
+      
+      section { padding: 78px 0; }
+      
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      
+      .service-card img { height: 200px; }
+      
+      .proof-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+      }
+      
+      .proof-card img { min-height: 320px; }
+      
+      .location-wrap {
+        grid-template-columns: 0.9fr 1.1fr;
+        min-height: 360px;
+      }
+      
+      .offer {
+        padding: 24px;
+      }
+      
+      footer {
+        padding: 56px 16px 42px;
+      }
+      
+      .section-title { font-size: clamp(2rem, 3.8vw, 2.4rem); }
+      
+      .social a {
+        width: 46px;
+      }
+    }
+
+    /* Original media queries */
     @media (max-width: 980px) {
       .hero-grid,
       .proof-grid,
@@ -740,11 +1095,11 @@
 
       <div class="proof-grid">
         <article class="proof-card">
-          <img src="https://m.clinique.com.mx/media/export/cms/editorial_hub/article/winter_skin_care/mobile/Winter-Skincare_Gentle-Cleanser-Gif-812x600_mobile.gif" alt="Animación de cuidado facial" loading="lazy" />
+          <img src="https://m.clinique.com.mx/media/export/cms/editorial_hub/article/winter_skin_care/mobile/Winter-Skincare_Gentle-Cleanser-Gif-812x600_mobile.gif" alt="Animación de cuidado facial" />
         </article>
         <article class="video-card">
           <iframe title="Video sobre rutina estética y cuidado facial" src="WhatsApp Video 2026-03-15 at 13.55.32.mp4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <p>Mi comienzo: “Un río no olvida su fuente.” Nunca debemos de olvidar nuestros origenes. "No pierdas tu muchosidad" Esta frase se la dice el sombrero loco a Alicia en Alicia en el país de las maravillas, cuando la ve diferente, cuando la ve distinta.</p>
+          <p>Mi comienzo: "Un río no olvida su fuente." Nunca debemos de olvidar nuestros origenes. "No pierdas tu muchosidad" Esta frase se la dice el sombrero loco a Alicia en Alicia en el país de las maravillas.</p>
         </article>
       </div>
     </section>
@@ -761,7 +1116,7 @@
           <p>Paysandú, Uruguay</p>
           <p><strong>Horario:</strong>Unicamente atiendo por agenda, Para evacuar dudas solo escribeme🤙</p>
         </div>
-        <iframe title="Mapa de ubicación Bellamorfosis" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.7687176294494!2d-58.08672822513094!3d-32.31806677385881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e8f8f8f8f8f9%3A0x8f8f8f8f8f8f8f8f!2sGaler%C3%ADa%20Cernicchiaro!5e0!3m2!1ses!2suy!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title="Mapa de ubicación Bellamorfosis" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3371.7687176294494!2d-58.08672822513094!3d-32.31806677385881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959a1d85d0d0d0d1%3A0x0!2sBellamorfosis!5e0!3m2!1ses-419!2suy!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <article class="offer" aria-label="Oferta promocional">
